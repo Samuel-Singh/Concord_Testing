@@ -1,5 +1,4 @@
 configuration:
-  runtime: "concord-v2"
   processTimeout: "PT12H"
   dependencies:
     - mvn://com.walmartlabs.concord.plugins.basic:ansible-tasks:2.14.0
@@ -16,12 +15,9 @@ forms:
         label: "target"
         placeholder: "Choose hostname or group from the inventory file"
 
-#publicFlows:
-#  - GetLinuxInfo
+publicFlows:
+  - Get Linux Information
 
 flows:
-  default:
-    - call: GetLinuxInfo
-    
-  GetLinuxInfo:
-    - flow: LinuxInfo
+  Get Linux Information:
+   - call: LinuxInfo
