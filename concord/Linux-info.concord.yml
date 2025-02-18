@@ -3,6 +3,19 @@ flows:
     - checkpoint: "Start"
     - checkpoint: "User Input"
     - form: linux_server
+    - task: msteamsV2
+      in:
+        action: createConversation
+        activity:
+          type: message
+          text: "My First Message"
+        channelId: "https://teams.microsoft.com/l/channel/19%3AhsihDwtJlyIsxg8OYf5OlfEdW_r9B_Pu1txrbQbpnoE1%40thread.tacv2/Concord?groupId=a6a2fe68-593b-49e4-b526-31278cfc6526"
+        ignoreErrors: true
+      out: result
+    - log: "Result status: ${result.ok}"
+    - if: "${!result.ok}"
+      then:
+      - throw: "Error occurred while sending a message: ${result.error}"
     - checkpoint: "Run Playbook"
     - task: ansible
       in:
