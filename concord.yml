@@ -16,8 +16,8 @@ forms:
         label: "target"
         placeholder: "Choose hostname or group from the inventory file"
 
-publicFlows:
-  - GetLinuxInfo
+#publicFlows:
+#  - GetLinuxInfo
 
 flows:
   default:
