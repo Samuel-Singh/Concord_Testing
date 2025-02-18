@@ -5,7 +5,6 @@ Use this guide to set up your own Concord instance. Or just use this one, don't 
 - [Concord access](https://gecgithub01.walmart.com/maa-platform-engineering/Concord/blob/main/README.md#concord-access)
 - [Concord Onboarding](https://gecgithub01.walmart.com/maa-platform-engineering/Concord/blob/main/README.md#concord-onboarding)
 - [Github setup](https://gecgithub01.walmart.com/maa-platform-engineering/Concord/blob/main/README.md#github-setup)
-- [Slack Integration](https://gecgithub01.walmart.com/maa-platform-engineering/Concord/blob/main/README.md#slack-integration)
 - [How to run a playbook](https://gecgithub01.walmart.com/maa-platform-engineering/Concord/blob/main/README.md#how-to-run-a-playbook)
 
 ---
@@ -30,24 +29,18 @@ Below are the steps to give access to individuals and/or teams via LDAP.
 2. Give a name to your team and click create. You can add a description if you want to.
 3. Steps to add individuals:
      - Click on the new team name. Under the Members tab, click on edit.
-       ![image](https://github.com/user-attachments/assets/0d3dcbab-f198-479c-adda-f9679be9d835)
 
      - Search for the individual you want to add, assign the role, click on **save changes**
-       ![image](https://github.com/user-attachments/assets/4ccfd15e-9c9d-4fc6-ada5-cb4b6aa13ceb)
-
 
 4. Steps to add groups:
      - Click on the new team name. Under the Members tab, click on edit.
-       ![image](https://github.com/user-attachments/assets/b92150f7-37b1-4678-a283-4e9eaf10b567)
-
      - Search for the group you want to add, assign the role, click on **save changes**
-       ![image](https://github.com/user-attachments/assets/5885d14c-8049-448e-b73e-98d0edfb3501)
 
 5. Now go to **Organizations → Your_Org_Name → Projects → Your_Project_name → Access → Edit**
-6. Enter the team name you created in step 2. It should be in the dropdown.
-7. Give this team the appropriate access level and click on Save Changes.
-   ![image](https://github.com/user-attachments/assets/c2b2f47c-90a8-4a2b-a620-5b95d707cf12)
 
+6. Enter the team name you created in step 2. It should be in the dropdown.
+
+7. Give this team the appropriate access level and click on Save Changes.
 
 8. Now the individuals and/or groups will have access to your project.
 
@@ -100,94 +93,34 @@ To start using Concord to run playbooks on single or multiple servers, you first
 
 ### GitHub setup
 Your GitHub setup with look like the following, at least as a base to start with.
-- [Inventories](https://gecgithub01.walmart.com/maa-platform-engineering/Concord/blob/main/README.md#inventories)
-- [Playbooks](https://gecgithub01.walmart.com/maa-platform-engineering/Concord/blob/main/README.md#playbooks)
-- [Concord YAML](https://gecgithub01.walmart.com/maa-platform-engineering/Concord/blob/main/README.md#concord-yaml)
+- [Inventories](https://github.com/Samuel-Singh/Concord_Testing/blob/main/inventory.ini)
+- [Playbooks](https://github.com/Samuel-Singh/Concord_Testing/tree/main/playbook)
+- [Concord YAML](https://github.com/Samuel-Singh/Concord_Testing/blob/main/concord.yml)
 - README.md (optional but good to have)
 
 #### Inventories
 The inventories directory can be broken down by environments, projects, etc. Your call, you can choose to keep everything in 1 inventory.ini file.
 Each environment (if you choose multiple environments) will have its own inventory.ini file that will list the hosts(servers) you want to run your playbook on.
 
-Example: ![image](https://gecgithub01.walmart.com/storage/user/87772/files/22d9326d-4b35-4da3-82f3-128935f13414)
+Example: ![image](https://github.com/user-attachments/assets/364dfdec-08c6-4aee-81a8-8496b62324df)
 
 #### Playbooks
-This directory will contain all your Ansible playbooks in YAML format. Example: **Concord/playbook/MAA_Tech_Solutions/Linux_Info.yml**
-Follow this as an example of an Ansible Playbook. https://gecgithub01.walmart.com/maa-platform-engineering/Concord/blob/main/playbook/Linux_Info.yml
+This directory will contain all your Ansible playbooks in YAML format. Example: **Concord_Testing/blob/main/playbook/Linux_Info.yml**
+Follow this as an example of an Ansible Playbook. https://github.com/Samuel-Singh/Concord_Testing/blob/main/playbook/Linux_Info.yml
 
 - The hosts section of the playbook refers to the inventory.ini file. For this example, the hosts is called target_hosts, which is a variable defined in your Playbook's flow.yml under 'flows'.
 
-![image](https://gecgithub01.walmart.com/storage/user/87772/files/b934b2e0-c55e-419a-b08a-e59921e5f5bb)
+![play](https://github.com/user-attachments/assets/03ee5831-34dc-4c4c-8cc9-4981e1526bd0)
 
 #### Concord YAML
 The concord.yml contains all the information Concord needs to connect the Concord UI with this Git repo.
 Refer to this as an example: https://gecgithub01.walmart.com/maa-platform-engineering/Concord/blob/main/concord.yml
 
-![image](https://gecgithub01.walmart.com/storage/user/87772/files/2249b3ec-eecd-4682-bd2f-d7cf6d5ae42c)
+![concord](https://github.com/user-attachments/assets/764bc381-32bc-46ef-adcb-ec40de504d22)
 
 Use the above as a template and fill in the details as need.
 
 ---
-
-### Slack Integration
-Steps to integrate Slack with Concord so we can get notification when a Concord process has started/errored/completed.
-1. Create a Slack channel. Ex: maa_engineering_concord
-2. In that Slack channel, type in @concord and hit enter. This will add the concord app in your channel. Be sure to select the one that says concord app, not concordbot app.
-
-![image](https://gecgithub01.walmart.com/storage/user/87772/files/5f3baa01-4baf-4e83-8e81-7276729fcbcd)
-
-3. Create a directory within your Concord repo called stack_flows.yml. Use this: https://gecgithub01.walmart.com/maa-platform-engineering/Concord/blob/main/concord/stack_flows.yml
-4. Open your concord.yml and ensure that it has the following arguments:
-  - slackChannel: "#maa_engineering_concord"   <------ put your Slack channel name
-  - slackUsername: "concord-server"  <---- You can put any string here
-  - slackNotification: "enabled"
-  - slackIconEmoji: ":concord-doge:"  <--- Replace this with any emoji icon you wish
-
-  ![image](https://gecgithub01.walmart.com/storage/user/87772/files/008dbc1f-a499-4f34-a671-1edbc355e47e)
-
-5. Head over to where you have your flows defined.
-  - If you chose to put them in concord.yml under flows section, go there.
-  - If you have them separately in another folder, go there.
-6. Add in a line before your playbook run called "-call :slackNotify"
-7. Make sure that your playbook step has the "-try" and "error" arguments which has your playbook step nested in it.
-```
-flows:
-  LinuxInfo:
-  - checkpoint: "Start"
-  - call: slackNotify
-  - checkpoint: "User Input"
-  - form: linux_server
-  - checkpoint: "Run Playbook"
-  - try: 
-     - task: ansible
-       in:
-         config:
-           defaults:
-             forks: 50
-           ssh_connection:
-             pipelining: True
-         auth:
-           privateKey:
-             user: concord-server
-             secret:
-               name: GCP
-         playbook: playbook/MAA_Tech_Solutions/Linux_Info.yml
-         inventoryFile: inventory.ini
-         extraVars:
-           target_hosts: ${linux_server.target}
-    error:
-     - call: slackNotify
-       in:
-         msgData:
-           text: ":warning: Playbook finished with error: ${result.error}"
-     - throw: "Ansible playbook has failed" 
-  - call: slackNotify
-     in:
-       msgData:
-         text: ":green-ball: Ansible playbook has been successfully completed"
-```
-8. Add in a line after your playbook run called "-call :slackNotify"
-9. Now you should get a slack notification in your slack channel when a Concord Process has started, finished successfully, or finished with errors.
 
 ### How to run a playbook
 - Important: If you haven't setup your playbook, inventory file, flows yet then please do. Follow this [Github setup](https://gecgithub01.walmart.com/maa-platform-engineering/Concord/blob/main/README.md#github-setup)
