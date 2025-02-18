@@ -1,0 +1,52 @@
+- name: Gather Host Information
+  hosts: '{{ target_hosts }}'
+#  become: true
+  gather_facts: yes
+      
+  tasks:
+#    - name: This task will always fail
+#      command: /bin/false 
+
+    - name: Display Hostname
+      debug:
+        msg: "Hostname: {{ ansible_hostname }}"
+
+    - name: Display OS Information
+      debug:
+        msg: "OS: {{ ansible_os_family }} {{ ansible_distribution_version }}"
+        
+    - name: Get number of cores
+      command: nproc
+      register: core_count
+      
+    - name: Display number of cores
+      debug:
+        msg: "Cores: {{ core_count.stdout }}"
+        
+    - name: Gather memory information
+      command: free -m
+      register: memory_info
+
+    - name: Display total memory
+      debug:
+        msg: "Total Memory: {{ memory_info.stdout_lines[1].split()[1] }} MB"
+
+    - name: Display used memory
+      debug:
+        msg: "Used Memory: {{ memory_info.stdout_lines[1].split()[2] }} MB"
+
+    - name: Display free memory
+      debug:
+        msg: "Free Memory: {{ memory_info.stdout_lines[1].split()[3] }} MB"
+
+    - name: Display shared memory
+      debug:
+        msg: "Shared Memory: {{ memory_info.stdout_lines[1].split()[4] }} MB"
+
+    - name: Display buffer/cache memory
+      debug:
+        msg: "Buffer/Cache: {{ memory_info.stdout_lines[1].split()[5] }} MB"
+
+    - name: Display available memory
+      debug:
+        msg: "Available Memory: {{ memory_info.stdout_lines[1].split()[6] }} MB"
