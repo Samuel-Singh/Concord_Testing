@@ -9,7 +9,7 @@ flows:
         activity:
           type: message
           text: "My First Message"
-        channelId: "https://teams.microsoft.com/l/channel/19%3AhsihDwtJlyIsxg8OYf5OlfEdW_r9B_Pu1txrbQbpnoE1%40thread.tacv2/Concord?groupId=a6a2fe68-593b-49e4-b526-31278cfc6526"
+        channelId: "19%3AhsihDwtJlyIsxg8OYf5OlfEdW_r9B_Pu1txrbQbpnoE1%40thread.tacv2"
         ignoreErrors: true
       out: result
     - log: "Result status: ${result.ok}"
