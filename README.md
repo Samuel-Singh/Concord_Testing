@@ -16,7 +16,7 @@ Use this guide to set up your own Concord instance. Or just use this one, don't 
 ### Concord important links
 Quick start: https://concord.walmartlabs.com/docs/getting-started/quickstart.html
 
-Concord base URL: http://<your-concord-server>:8001/#/org
+Concord base URL: http://your-concord-server:8001/#/org
 
 Sample Concord Github: https://github.com/Samuel-Singh/Concord_Testing
 
