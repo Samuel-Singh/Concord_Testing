@@ -49,7 +49,7 @@ Below are the steps to give access to individuals and/or teams via LDAP.
 ### Concord Onboarding
 To start using Concord to run playbooks on single or multiple servers, you first need to check if your organization exist and has access to Concord. If not, you need to contact the Concord administrator to create one and/or give you access.
 
-- Go to https://concord.prod.walmart.com/#/org and see if you can find your organization in the list.
+- Go to http://your-concord-server:8001/#/org and see if you can find your organization in the list.
       - Disable this incase the organization does exist but you do not have access to it. ![image](https://github.com/user-attachments/assets/5ab1656a-6d38-4c94-9a79-8eca6e1ced3f)
 
 
