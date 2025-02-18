@@ -3,15 +3,6 @@ flows:
     - checkpoint: "Start"
     - checkpoint: "User Input"
     - form: linux_server
-    - task: http
-      in:
-        request: json
-        method: POST
-        url: "https://walmart.webhook.office.com/webhookb2/a6a2fe68-593b-49e4-b526-31278cfc6526@3cbcc3d3-094d-4006-9849-0d11d61f484d/IncomingWebhook/46a73a29b366422ebdbc5f20a836ac3a/cb9edbe8-bfd5-4a05-8839-061cf8ae02e9/V2huBIRjrMElddaBg42Ogm-5Yfr5uP6Jed4oLFXXarcx41"
-        body: |
-          {
-            "text": "A playbook run has been initiated by ${initiator}. You can view the process [here](http://concord-ubuntu:8001//#/process/${txId}/status)."
-          }
     - checkpoint: "Run Playbook"
     - task: ansible
       in:
