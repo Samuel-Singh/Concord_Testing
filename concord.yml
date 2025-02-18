@@ -21,8 +21,3 @@ publicFlows:
 flows:
   Get Linux Information:
    - call: LinuxInfo
-
-
-#flows:
-#  default:
-#  - log: "Hello Concord User"
