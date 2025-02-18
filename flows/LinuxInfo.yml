@@ -1,0 +1,22 @@
+flows:
+  LinuxInfo:
+  - checkpoint: "Start"
+  - checkpoint: "User Input"
+  - form: linux_server
+  - checkpoint: "Run Playbook"
+  - task: ansible
+    in:
+      config:
+          defaults:
+            forks: 50
+          ssh_connection:
+            pipelining: True
+      auth:
+          privateKey:
+            user: concord-server
+            secret:
+              name: Azure
+      playbook: playbook/Linux_Info.yml
+      inventoryFile: inventory.ini
+      extraVars:
+          target_hosts: ${linux_server.target}
