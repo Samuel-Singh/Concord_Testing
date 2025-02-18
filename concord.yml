@@ -21,7 +21,7 @@ publicFlows:
 
 flows:
   default:
-    - call: linuxInfo
+    - call: Get Linux Information
 
-  linuxInfo:
+  Get Linux Information:
     - call: concord/Linux-info.yml
