@@ -123,10 +123,10 @@ Use the above as a template and fill in the details as need.
 ---
 
 ### How to run a playbook
-- Important: If you haven't setup your playbook, inventory file, flows yet then please do. Follow this [Github setup](https://gecgithub01.walmart.com/maa-platform-engineering/Concord/blob/main/README.md#github-setup)
+- Important: If you haven't setup your playbook, inventory file, flows yet then please do. Follow this [Github setup](https://github.com/Samuel-Singh/Concord_Testing/tree/main?tab=readme-ov-file#github-setup)
 - The server(s) you want to run the playbook on also need a public key installed on them. The process varies depending on the cloud provider.
   - Process to obtain the key from Concord:
-    - Log into Concord UI. https://concord.prod.walmart.com/#/org/Technology_Platform_Mergers_and_Acquisitions/project/MAA_Playbooks/process
+    - Log into Concord UI.
     - Navigate to Organizations → Your_Org_Name → Secrets.
     - Select New Secret on the toolbar.
     - Provide a string, for example, mykey as a Name and select Generate a new key pair as a Type.
@@ -137,14 +137,9 @@ Steps to run a playbook in Concord.
 1. Log into Concord UI. https://concord.prod.walmart.com/#/org/Technology_Platform_Mergers_and_Acquisitions/project/MAA_Playbooks/process
 2. Click on "Repositories" and then click on the blue play icon on the right. See screenshot below.
 
-![image](https://gecgithub01.walmart.com/storage/user/87772/files/8475b7c2-f638-43b4-9ef2-62b4aba56c73)
+![image](https://github.com/user-attachments/assets/b4ed73bc-6598-4fb6-bdf6-80018160c045)
 
 3. Select your playbook from the dropdown menu and click on start. Then click on "Open the process page" in the next pop up.
-
-![image](https://gecgithub01.walmart.com/storage/user/87772/files/9054da9e-9d9c-4370-9c73-baffa1cff801)
-
 4. Click on "Form Wizard". This will take your to a prompt that will ask you for the hostname of the server(s) you want the playbook to run. Click on Submit.
-
-![image](https://gecgithub01.walmart.com/storage/user/87772/files/24f7f364-22ee-4165-b3b0-056480a262b0)
 
 Your playbook should be running now. Click on "Logs" to view the progress. You can also check your Slack channel for update, assuming you have Slack setup.
