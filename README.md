@@ -15,17 +15,11 @@ Use this guide to set up your own Concord instance. Or just use this one, don't 
 ---
 
 ### Concord important links
-Quick start: https://dx.walmart.com/concord/documentation/dx/Concord-Quickstart-Dcbyfr2x4q3
+Quick start: https://concord.walmartlabs.com/docs/getting-started/quickstart.html
 
-Concord base URL: https://concord.prod.walmart.com/#/org
+Concord base URL: http://<your-concord-server>:8001/#/org
 
-M&A Concord URL: https://concord.prod.walmart.com/#/org/Technology_Platform_Mergers_and_Acquisitions/project/MAA_Playbooks/process
-
-M&A Concord Github: https://gecgithub01.walmart.com/maa-platform-engineering/Concord
-
-M&A Engineering Concord Slack: #maa_engineering_concord
-
-Concord Slack: #sde-concord
+Sample Concord Github: https://github.com/Samuel-Singh/Concord_Testing
 
 ---
 
