@@ -30,10 +30,10 @@ Below are the steps to give access to individuals and/or teams via LDAP.
 2. Give a name to your team and click create. You can add a description if you want to.
 3. Steps to add individuals:
      - Click on the new team name. Under the Members tab, click on edit.
-       ![image](https://gecgithub01.walmart.com/storage/user/87772/files/2bffcbd3-cb16-4c0d-88cc-3892030cc04a)
+       ![image](https://github.com/user-attachments/assets/0d3dcbab-f198-479c-adda-f9679be9d835)
 
      - Search for the individual you want to add, assign the role, click on **save changes**
-       ![image](https://gecgithub01.walmart.com/storage/user/87772/files/4ecd3d40-30d4-47d6-abcb-81ff74ff3593)
+       ![image](https://github.com/user-attachments/assets/4ccfd15e-9c9d-4fc6-ada5-cb4b6aa13ceb)
 
 
 4. Steps to add groups:
