@@ -69,7 +69,7 @@ To start using Concord to run playbooks on single or multiple servers, you first
       - Click **Create**.
 5. This key has to be installed in your git repo. This is under **Settings → Deploy keys → Add deploy key**
 6. Create your project under your organization.
-      - Log into the [Concord Console](https://concord.prod.walmart.com/#/org) user interface.
+      - Log into the Concord portal.
       - Navigate to **Organizations → Your_Org_Name → Projects**.
       - Select **New Project** on the toolbar.
       - Provide a **Name** for the project. For example, myproject.
@@ -80,8 +80,8 @@ To start using Concord to run playbooks on single or multiple servers, you first
       - Under Organizations → Your_Org_Name → Projects → Repositories tab, select Add repository.
       - Enable Custom authentication.
       - Select the Credentials of the key you created in step 4.
-      - Provide a Name for the repository. For example, GTP.
-      - Provide the URL of the git repo. Example: git@gecgithub01.walmart.com:maa-platform-engineering/Concord.git
+      - Provide a Name for the repository.
+      - Provide the URL of the git repo. Example: https://github.com/Samuel-Singh/Concord_Testing
       - Enter "main" as the Branch/Tag
       - Click on Test connection on the bottom right to ensure that all the credentials are working as expected.
 
@@ -93,9 +93,9 @@ To start using Concord to run playbooks on single or multiple servers, you first
 
 ### GitHub setup
 Your GitHub setup with look like the following, at least as a base to start with.
-- [Inventories](https://github.com/Samuel-Singh/Concord_Testing/blob/main/inventory.ini)
-- [Playbooks](https://github.com/Samuel-Singh/Concord_Testing/tree/main/playbook)
-- [Concord YAML](https://github.com/Samuel-Singh/Concord_Testing/blob/main/concord.yml)
+- [Inventories](https://github.com/Samuel-Singh/Concord_Testing/tree/main?tab=readme-ov-file#inventories)
+- [Playbooks](https://github.com/Samuel-Singh/Concord_Testing/tree/main?tab=readme-ov-file#playbooks)
+- [Concord YAML](https://github.com/Samuel-Singh/Concord_Testing/tree/main?tab=readme-ov-file#concord-yaml)
 - README.md (optional but good to have)
 
 #### Inventories
@@ -114,7 +114,7 @@ Follow this as an example of an Ansible Playbook. https://github.com/Samuel-Sing
 
 #### Concord YAML
 The concord.yml contains all the information Concord needs to connect the Concord UI with this Git repo.
-Refer to this as an example: https://gecgithub01.walmart.com/maa-platform-engineering/Concord/blob/main/concord.yml
+Refer to this as an example: https://github.com/Samuel-Singh/Concord_Testing/blob/main/concord.yml
 
 ![concord](https://github.com/user-attachments/assets/764bc381-32bc-46ef-adcb-ec40de504d22)
 
