@@ -38,15 +38,15 @@ Below are the steps to give access to individuals and/or teams via LDAP.
 
 4. Steps to add groups:
      - Click on the new team name. Under the Members tab, click on edit.
-       ![image](https://gecgithub01.walmart.com/storage/user/87772/files/a71623ac-c7ac-4453-b7a6-bc98160f1039)
+       ![image](https://github.com/user-attachments/assets/b92150f7-37b1-4678-a283-4e9eaf10b567)
 
      - Search for the group you want to add, assign the role, click on **save changes**
-       ![image](https://gecgithub01.walmart.com/storage/user/87772/files/3e11c21f-e4ad-465e-99f8-46e8fe6f660c)
+       ![image](https://github.com/user-attachments/assets/5885d14c-8049-448e-b73e-98d0edfb3501)
 
 5. Now go to **Organizations → Your_Org_Name → Projects → Your_Project_name → Access → Edit**
 6. Enter the team name you created in step 2. It should be in the dropdown.
 7. Give this team the appropriate access level and click on Save Changes.
-   ![image](https://gecgithub01.walmart.com/storage/user/87772/files/fa77e76d-e26d-4b86-9b7b-0e0c8d7a5bc9)
+   ![image](https://github.com/user-attachments/assets/c2b2f47c-90a8-4a2b-a620-5b95d707cf12)
 
 
 8. Now the individuals and/or groups will have access to your project.
@@ -54,24 +54,20 @@ Below are the steps to give access to individuals and/or teams via LDAP.
 ---
 
 ### Concord Onboarding
-To start using Concord to run playbooks on single or multiple servers, you first need to check if your organization exist and has access to Concord. If not, you need to submit a request via Jira ticket to get your organization created.
+To start using Concord to run playbooks on single or multiple servers, you first need to check if your organization exist and has access to Concord. If not, you need to contact the Concord administrator to create one and/or give you access.
 
-- Check here to find out your Organization name and cost center. https://teamrosters.walmart.com/app/#/
 - Go to https://concord.prod.walmart.com/#/org and see if you can find your organization in the list.
-      - Disable this incase the organization does exist but you do not have access to it. ![image](https://gecgithub01.walmart.com/storage/user/87772/files/fcfbb9ac-7bea-4e11-b29e-5c7aedbef33b)
-      
-     - Ask your manager, the organization might be named differently due to restrictions on certain characters in the name.
-- If Organization is not created, click on this link [Request a new Concord Organization](https://concord.prod.walmart.com/api/v1/org/SDE/project/sde-onboarding/repo/main/start/concord_prepareCreateOrg). This will start a Concord process, fill out the details requested and a Jira ticket will be created.
-      - This requires your manager's approval. A simple screenshot of an email will suffice.
+      - Disable this incase the organization does exist but you do not have access to it. ![image](https://github.com/user-attachments/assets/5ab1656a-6d38-4c94-9a79-8eca6e1ced3f)
+
 
 **Steps to start using Concord to run playbooks.**
-1. Create a GIT repository. https://gecgithub01.walmart.com/
-      - For this guide, we will be referring to this. https://gecgithub01.walmart.com/maa-platform-engineering/Concord
+1. Create a GIT repository.
+      - For this guide, we will be referring to this. https://github.com/Samuel-Singh/Concord_Testing
 2. Add a concord.yml file in the root directory.
 
-      - Basic minimal example to get started: ![image](https://gecgithub01.walmart.com/storage/user/87772/files/d070ed88-c953-4abc-ab57-686fe83d5ea0)
+      - Basic minimal example to get started: ![image](https://github.com/user-attachments/assets/3b9cd7a6-9ef8-4117-a828-edf013dc7da1)
 
-3. Assuming that your organization is created in Concord, go to the [Concord console](https://concord.prod.walmart.com/#/org) and click into your organization.
+3. Assuming that your organization is created in Concord, go to the console: http://<your-concord-server>:8001/#/org and click into your organization.
 4. A deploy key has to be created.
       - Verify that your organization ID is created as per the previous step.
       - Navigate to **Organizations → Your_Org_Name → Secrets**.
@@ -96,7 +92,7 @@ To start using Concord to run playbooks on single or multiple servers, you first
       - Enter "main" as the Branch/Tag
       - Click on Test connection on the bottom right to ensure that all the credentials are working as expected.
 
-        ![image](https://gecgithub01.walmart.com/storage/user/87772/files/2cdda30e-0ba9-4a5e-a29a-196edff11025)
+        ![AddaRepo](https://github.com/user-attachments/assets/7ca0a716-2b42-4cea-a7f7-3adfb9a1708b)
 
 8. You now have a Concord UI that is connected to your Git repo and is ready to be customized and used.
 
