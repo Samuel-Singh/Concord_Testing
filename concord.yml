@@ -20,8 +20,8 @@ publicFlows:
   - GetLinuxInfo
 
 flows:
-  GetLinuxInfo:
-    - call: LinuxInfo
+  default:
+    - call: GetLinuxInfo
     
-  LinuxInfo:
-    - flow: flows/LinuxInfo
+  GetLinuxInfo:
+    - flow: LinuxInfo
