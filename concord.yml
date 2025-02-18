@@ -3,9 +3,6 @@ configuration:
   processTimeout: "PT12H"
   dependencies:
     - mvn://com.walmartlabs.concord.plugins.basic:ansible-tasks:2.14.0
-    - mvn://org.codehaus.groovy:groovy-all:pom:2.5.2
-    - mvn://com.walmartlabs.concord.plugins:git:2.5.0
-    - mvn://com.walmartlabs.concord.plugins.basic:http-tasks:1.96.1
     - mvn://com.walmartlabs.concord.plugins:msteams-task:2.5.0
   arguments:
     concordServerUrl: "http://<your-concord-server>:8001/"
