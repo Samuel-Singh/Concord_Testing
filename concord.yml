@@ -17,8 +17,11 @@ forms:
         placeholder: "Choose hostname or group from the inventory file"
 
 publicFlows:
-  - Get Linux Information
+  - GetLinuxInfo
 
 flows:
-  Get Linux Information:
+  default:
+    - call: GetLinuxInfo
+    
+  GetLinuxInfo:
     - flow: flows/LinuxInfo
