@@ -21,5 +21,7 @@ publicFlows:
 
 flows:
   Get Linux Information:
-   - include: "concord/Linux-info.yml"
-   - call: LinuxInfo
+    - log: "Including Linux-info.yml"
+    - include: "concord/Linux-info.yml"
+    - log: "Calling LinuxInfo flow"
+    - call: LinuxInfo
