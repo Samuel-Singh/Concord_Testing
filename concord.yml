@@ -7,12 +7,7 @@ configuration:
     - mvn://com.walmartlabs.concord.plugins.basic:http-tasks:1.96.1
     - mvn://com.walmartlabs.concord.plugins:msteams-task:2.5.0
   arguments:
-    concordServerUrl: "https://concord.prod.walmart.com"
-    repositoryUrl: "https://gecgithub01.walmart.com/maa-platform-engineering/Concord"
-    slackChannel: "#maa_engineering_concord"
-    slackUsername: "concord-server" 
-    slackNotification: "enabled"
-    slackIconEmoji: ":concord-doge:"
+    concordServerUrl: "http://<your-concord-server>:8001/"
 forms:
   linux_server:
     - target:
