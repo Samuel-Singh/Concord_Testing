@@ -134,7 +134,7 @@ Use the above as a template and fill in the details as need.
     - Click into the secret and copy the public key.
 
 Steps to run a playbook in Concord.
-1. Log into Concord UI. https://concord.prod.walmart.com/#/org/Technology_Platform_Mergers_and_Acquisitions/project/MAA_Playbooks/process
+1. Log into Concord UI.
 2. Click on "Repositories" and then click on the blue play icon on the right. See screenshot below.
 
 ![image](https://github.com/user-attachments/assets/b4ed73bc-6598-4fb6-bdf6-80018160c045)
