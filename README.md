@@ -1,11 +1,11 @@
 # Welcome to Concord! :sunglasses:
 Use this guide to set up your own Concord instance. Or just use this one, don't change the configs, just add your playbook, playbook flows, inventory, see below guides.
 
-- [Concord important links](https://gecgithub01.walmart.com/maa-platform-engineering/Concord/blob/main/README.md#concord-important-links)
-- [Concord access](https://gecgithub01.walmart.com/maa-platform-engineering/Concord/blob/main/README.md#concord-access)
-- [Concord Onboarding](https://gecgithub01.walmart.com/maa-platform-engineering/Concord/blob/main/README.md#concord-onboarding)
-- [Github setup](https://gecgithub01.walmart.com/maa-platform-engineering/Concord/blob/main/README.md#github-setup)
-- [How to run a playbook](https://gecgithub01.walmart.com/maa-platform-engineering/Concord/blob/main/README.md#how-to-run-a-playbook)
+- [Concord important links](https://github.com/Samuel-Singh/Concord_Testing/tree/main?tab=readme-ov-file#concord-important-links)
+- [Concord access](https://github.com/Samuel-Singh/Concord_Testing/tree/main?tab=readme-ov-file#concord-access)
+- [Concord Onboarding](https://github.com/Samuel-Singh/Concord_Testing/tree/main?tab=readme-ov-file#concord-onboarding)
+- [Github setup](https://github.com/Samuel-Singh/Concord_Testing/tree/main?tab=readme-ov-file#github-setup)
+- [How to run a playbook](https://github.com/Samuel-Singh/Concord_Testing/tree/main?tab=readme-ov-file#how-to-run-a-playbook)
 
 ---
 
