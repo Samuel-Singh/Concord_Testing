@@ -24,4 +24,5 @@ flows:
     - call: Get Linux Information
 
   Get Linux Information:
-    - call: concord/Linux-info.yml
+    - include: "concord/Linux-info.yml"
+    - call: LinuxInfo
