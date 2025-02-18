@@ -15,8 +15,8 @@ flows:
           privateKey:
             user: concord-server
             secret:
-              name: GCP
-      playbook: playbook/MAA_Tech_Solutions/Linux_Info.yml
+              name: Azure
+      playbook: playbook/Linux_Info.yml
       inventoryFile: inventory.ini
       extraVars:
           target_hosts: ${linux_server.target}
