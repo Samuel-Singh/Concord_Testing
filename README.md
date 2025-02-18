@@ -10,7 +10,7 @@ Use this guide to set up your own Concord instance. Or just use this one, don't 
 
 ---
 
-![image](https://gecgithub01.walmart.com/storage/user/87772/files/a37a06ed-4c6b-4987-8831-158137ddc65e)
+![image](https://github.com/user-attachments/assets/e2c97ebe-9136-47ee-8c18-09fba53668a4)
 
 ---
 
