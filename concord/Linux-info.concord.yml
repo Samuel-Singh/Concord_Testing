@@ -22,3 +22,18 @@ flows:
         inventoryFile: inventory.ini
         extraVars:
           target_hosts: ${linux_server.target}
+      out: playbookResult
+    - if: "${playbookResult.ok}"
+      then:
+        - task: msteams
+          in:
+            text: "The playbook execution was successful."
+            replyToId: "${messageId}"
+            ignoreErrors: true
+      else:
+        - task: msteams
+          in:
+            title: "Playbook Execution Completed With Errors"
+            text: "The playbook execution failed."
+            replyToId: "${messageId}"
+            ignoreErrors: true
