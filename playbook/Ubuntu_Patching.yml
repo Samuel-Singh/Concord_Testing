@@ -48,15 +48,11 @@
         path: /var/run/host-key-changed
       register: host_key_changed_file
 
-    - name: Display reboot status
-      debug:
-        msg: "Reboot required (needs-restarting): {{ needs_restarting_result.rc == 0 }}"
-
-    - name: Display reboot status (check-restart)
+    - name: Display reboot status (check-restart):
       debug:
         msg: "Reboot required (check-restart): {{ reboot_required_file.stat.exists }}"
 
-    - name: Display host key change status
+    - name: Display host key change status:
       debug:
         msg: "Reboot required (host key changed): {{ host_key_changed_file.stat.exists }}"
 
