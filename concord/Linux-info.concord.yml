@@ -23,8 +23,3 @@ flows:
         extraVars:
           target_hosts: ${linux_server.target}
       out: playbookResult
-    - if: "${playbookResult.ok}"
-      then:
-        - call: teamSuccess
-      else:
-        - call: teamFailure
