@@ -25,15 +25,6 @@ flows:
       out: playbookResult
     - if: "${playbookResult.ok}"
       then:
-        - call: teams
-          in:
-            text: "The playbook execution was successful."
-            replyToId: "${messageId}"
-            ignoreErrors: true
+        - call: teamSuccess
       else:
-        - call: teams
-          in:
-            title: "Playbook Execution Completed With Errors"
-            text: "The playbook execution failed."
-            replyToId: "${messageId}"
-            ignoreErrors: true
+        - call: teamFailure
