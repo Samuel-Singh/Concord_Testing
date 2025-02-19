@@ -1,17 +1,15 @@
 flows:
   teams:
-  - task: msteams
-    in:
-      action: sendMessage
-      teamId: "a6a2fe68-593b-49e4-b526-31278cfc6526"
-      webhookId: "V2huBIRjrMElddaBg42Ogm-5Yfr5uP6Jed4oLFXXarcx41"
-      title: "A Concord process has been started"
-      text: "Playbook has been initiated"
-      ignoreErrors: true
-    out: result
-
-  - if: "${!result.ok}"
-    then:
-      - throw: "Error while sending a message: ${result.error}"
-    else:
-      - log: "Data: ${result.data}"
+    - task: msteams
+      in:
+        action: sendMessage
+        webhookUrl: ${teamsWebhookUrl}
+        title: "A Concord process has been started"
+        text: "Playbook has been initiated"
+        ignoreErrors: true
+      out: result
+    - if: "${!result.ok}"
+      then:
+        - throw: "Error while sending a message: ${result.error}"
+      else:
+        - log: "Data: ${result.data}"
