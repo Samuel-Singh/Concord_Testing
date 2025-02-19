@@ -1,0 +1,62 @@
+---
+- hosts: '{{ target_hosts }}'
+  become: true
+  gather_facts: yes
+  tasks:
+
+    - name: Check for upgradable packages
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600  # Cache for 1 hour
+      register: upgradable_packages
+
+    - name: Display upgradable packages
+      debug:
+        msg: "Upgradable packages: {{ upgradable_packages.results | map(attribute='pkg') | list }}"
+      when: upgradable_packages.results | length > 0
+
+    - name: Upgrade packages
+      apt:
+        upgrade: safe # or dist-upgrade if you want to also upgrade distribution
+        autoremove: yes # remove unused dependencies
+        autoclean: yes  # remove old downloaded packages
+        state: present
+      register: upgrade_result
+
+    - name: Display upgrade results
+      debug:
+        msg: "Upgraded packages: {{ upgrade_result.results | selectattr('changed') | map(attribute='pkg') | list }}"
+      when: upgrade_result.results | length > 0 and upgrade_result.changed
+
+    - name: Display not upgraded packages
+      debug:
+        msg: "Not upgraded packages: {{ upgrade_result.results | rejectattr('changed') | map(attribute='pkg') | list }}"
+      when: upgrade_result.results | length > 0 and not upgrade_result.changed
+
+    - name: Check for reboot required (using check-restart)
+      stat:
+        path: /var/run/reboot-required
+      register: reboot_required_file
+
+    - name: Check for reboot required (using needs-restarting)
+      command: needs-restarting -r
+      register: needs_restarting_result
+      changed_when: false # Prevent "changed" status unless command fails
+
+    - name: Display reboot status
+      debug:
+        msg: "Reboot required (check-restart): {{ reboot_required_file.stat.exists }}"
+
+    - name: Display reboot status (needs-restarting):
+      debug:
+        msg: "Reboot required (needs-restarting): {{ needs_restarting_result.rc == 0 }}"
+
+    - name: Reboot the server if required (using check-restart)
+      reboot:
+        msg: "Rebooting server after package upgrades"
+      when: reboot_required_file.stat.exists
+
+    - name: Reboot the server if required (using needs-restarting)
+      reboot:
+        msg: "Rebooting server after package upgrades"
+      when: needs_restarting_result.rc == 0
