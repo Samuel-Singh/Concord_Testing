@@ -16,7 +16,7 @@ flows:
       else:
         - log: "Data: ${result.data}"
         - set: 
-            messageId = "${result.data.id}"
+            messageId: "${result.data.id}"
 
   teamSuccess:
     - task: msteams
