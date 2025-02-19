@@ -29,8 +29,10 @@ flows:
           in:
             msgData:
               text: "Playbook finished with error"
+            replyToId: "${messageId}"
       else:
         - call: teams
           in:
             msgData:
               text: "Playbook has been successfully completed"
+            replyToId: "${messageId}"
