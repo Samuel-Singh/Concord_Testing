@@ -47,7 +47,7 @@
       debug:
         msg: "Reboot required (check-restart): {{ reboot_required_file.stat.exists }}"
 
-    - name: Display reboot status (needs-restarting):
+    - name: Display reboot status (needs-restarting)
       debug:
         msg: "Reboot required (needs-restarting): {{ needs_restarting_result.rc == 0 }}"
 
