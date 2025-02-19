@@ -15,7 +15,7 @@
         state: present
       register: upgradable_packages
 
-    - name: Display upgradable packages (Corrected Check)
+    - name: Display upgradable packages
       debug:
         msg: "Upgradable packages: {{ upgradable_packages.results.pkgs | map(attribute='pkg') | list }}"
       when: upgradable_packages.results is defined and upgradable_packages.results.pkgs is defined and upgradable_packages.results.pkgs | length > 0
@@ -38,21 +38,23 @@
         msg: "Not upgraded packages: {{ upgrade_result.results | rejectattr('changed') | map(attribute='pkg') | list }}"
       when: upgrade_result.results is defined and not upgrade_result.changed and upgrade_result.results is defined
 
-    - name: Check if a reboot is needed (check-restart)
+    - name: Check if a reboot is needed (check-restart - ONLY if packages were updated)
       stat:
         path: /var/run/reboot-required
       register: reboot_required_file
+      when: upgrade_result.changed  # Only check if packages were actually upgraded
 
     - name: Check for host key change (check-restart)
       stat:
         path: /var/run/host-key-changed
       register: host_key_changed_file
 
-    - name: Display reboot status (check-restart)
+    - name: Display reboot status (check-restart):
       debug:
         msg: "Reboot required (check-restart): {{ reboot_required_file.stat.exists }}"
+      when: upgrade_result.changed
 
-    - name: Display host key change status
+    - name: Display host key change status:
       debug:
         msg: "Reboot required (host key changed): {{ host_key_changed_file.stat.exists }}"
 
@@ -60,5 +62,5 @@
       reboot:
         msg: "Rebooting server after package upgrades or host key change"
       when:
-        - reboot_required_file.stat.exists
+        - upgrade_result.changed and reboot_required_file.stat.exists # Only reboot if packages were updated AND reboot file exists
         - host_key_changed_file.stat.exists
