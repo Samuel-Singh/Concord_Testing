@@ -19,23 +19,17 @@ flows:
   teamSuccess:
     - task: msteams
       in:
-          action: sendMessage
-          webhookUrl: ${teamsWebhookUrl}
-          title: "Playbook Execution Completed"
+          action: replyToConversation
+          conversationId: ${result.conversationId}
           text: |
-            The playbook execution was successful.
+            The playbook execution succeeded.
             [Concord Link](${concordProcess})
-          replyToId: "${messageId}"
-          ignoreErrors: true
 
   teamFailure:
     - task: msteams
       in:
-          action: sendMessage
-          webhookUrl: ${teamsWebhookUrl}
-          title: "Playbook Execution Completed With Failure"
+          action: replyToConversation
+          conversationId: ${result.conversationId}
           text: |
             The playbook execution failed.
             [Concord Link](${concordProcess})
-          replyToId: "${messageId}"
-          ignoreErrors: true
