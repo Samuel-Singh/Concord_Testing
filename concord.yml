@@ -16,7 +16,10 @@ forms:
 
 publicFlows:
   - Get Linux Information
+  - Ubuntu Patching
 
 flows:
   Get Linux Information:
    - call: LinuxInfo
+  Ubuntu Patching:
+   - call: UbuntuPatching
