@@ -16,3 +16,23 @@ flows:
       else:
         - log: "Data: ${result.data}"
         - set: messageId = "${result.data.id}"
+
+  teamSuccess:
+    - task: msteams
+      in:
+          action: sendMessage
+          webhookUrl: ${teamsWebhookUrl}
+          title: "Playbook Execution Completed"
+          text: "The playbook execution was successful."
+          replyToId: "${messageId}"
+          ignoreErrors: true
+
+  teamFailure:
+    - task: msteams
+          in:
+            action: sendMessage
+            webhookUrl: ${teamsWebhookUrl}
+            title: "Playbook Execution Completed With Failure"
+            text: "The playbook execution failed."
+            replyToId: "${messageId}"
+            ignoreErrors: true
