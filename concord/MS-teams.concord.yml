@@ -1,7 +1,5 @@
 flows:
   teams:
-    - set:
-        concordProcess: "http://concord:8001/#/process/${processInstanceId}/status"
     - task: msteams
       in:
         action: sendMessage
