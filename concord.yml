@@ -1,4 +1,12 @@
 configuration:
+  defaultProcessCfg:
+    defaultTaskVariables:
+      msteams:
+        webhookTypeId: "V2huBIRjrMElddaBg42Ogm-5Yfr5uP6Jed4oLFXXarcx41"
+        tenantId: "3cbcc3d3-094d-4006-9849-0d11d61f484d"
+        rootWebhookUrl: "https://walmart.webhook.office.com/webhookb2"
+        proxyAddress: "proxy.example.com"
+        proxyPort: 8080
   runtime: "concord-v2"
   processTimeout: "PT12H"
   dependencies:
