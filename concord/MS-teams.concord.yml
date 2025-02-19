@@ -24,7 +24,9 @@ flows:
           action: sendMessage
           webhookUrl: ${teamsWebhookUrl}
           title: "Playbook Execution Completed"
-          text: "The playbook execution was successful."
+          text: |
+            The playbook execution was successful.
+            [Concord Link](${concordProcess})
           replyToId: "${messageId}"
           ignoreErrors: true
 
@@ -34,6 +36,8 @@ flows:
           action: sendMessage
           webhookUrl: ${teamsWebhookUrl}
           title: "Playbook Execution Completed With Failure"
-          text: "The playbook execution failed."
+          text: |
+            The playbook execution failed.
+            [Concord Link](${concordProcess})
           replyToId: "${messageId}"
           ignoreErrors: true
