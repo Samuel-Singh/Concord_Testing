@@ -41,7 +41,8 @@
     - name: Check if a reboot is needed (needs-restarting)
       command: needs-restarting -r
       register: needs_restarting_result
-      changed_when: false  # Don't mark as changed because of the return code
+      changed_when: false
+      ignore_errors: true # Important: Ignore if command doesn't exist
 
     - name: Check if a reboot is needed (check-restart - more robust)
       stat:
@@ -69,6 +70,6 @@
       reboot:
         msg: "Rebooting server after package upgrades or host key change"
       when:
-        - needs_restarting_result.rc == 0
+        - needs_restarting_result.rc == 0 # Only check if command succeeded
         - reboot_required_file.stat.exists
         - host_key_changed_file.stat.exists
