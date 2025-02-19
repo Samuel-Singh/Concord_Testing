@@ -21,7 +21,7 @@ flows:
   Get Linux Information:
    - set: 
        processId: ${context.processInstanceId}
-   - log: "Process Instance ID: ${processInstanceId}"
+   - log: "Process Instance ID: ${processId}"
    - call: LinuxInfo
   Ubuntu Patching:
    - call: UbuntuPatching
