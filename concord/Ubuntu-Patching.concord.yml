@@ -1,5 +1,5 @@
 flows:
-  LinuxInfo:
+  UbuntuPatching:
     - checkpoint: "Start"
     - checkpoint: "User Input"
     - form: linux_server
