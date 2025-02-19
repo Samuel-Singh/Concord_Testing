@@ -15,6 +15,7 @@ flows:
         - throw: "Error while sending a message: ${result.error}"
       else:
         - log: "Data: ${result.data}"
+        - log: "Result: ${result}"
         - set: 
             messageId: "${result.data.id}"
 
