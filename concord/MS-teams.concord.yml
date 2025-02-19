@@ -15,7 +15,8 @@ flows:
         - throw: "Error while sending a message: ${result.error}"
       else:
         - log: "Data: ${result.data}"
-        - set: messageId = "${result.data.id}"
+        - set: 
+            messageId = "${result.data.id}"
 
   teamSuccess:
     - task: msteams
