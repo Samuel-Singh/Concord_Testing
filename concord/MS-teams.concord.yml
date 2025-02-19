@@ -29,10 +29,10 @@ flows:
 
   teamFailure:
     - task: msteams
-          in:
-            action: sendMessage
-            webhookUrl: ${teamsWebhookUrl}
-            title: "Playbook Execution Completed With Failure"
-            text: "The playbook execution failed."
-            replyToId: "${messageId}"
-            ignoreErrors: true
+      in:
+          action: sendMessage
+          webhookUrl: ${teamsWebhookUrl}
+          title: "Playbook Execution Completed With Failure"
+          text: "The playbook execution failed."
+          replyToId: "${messageId}"
+          ignoreErrors: true
