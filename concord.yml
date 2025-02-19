@@ -18,6 +18,9 @@ publicFlows:
   - Ubuntu Patching
 
 flows:
+  setConcordProcess:
+    - set:
+        concordProcess: "http://concord:8001/#/process/${processInstanceId}/status"
   Get Linux Information:
    - call: LinuxInfo
   Ubuntu Patching:
