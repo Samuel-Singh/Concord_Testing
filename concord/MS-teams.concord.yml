@@ -5,7 +5,9 @@ flows:
         action: sendMessage
         webhookUrl: ${teamsWebhookUrl}
         title: "A Concord process has been started"
-        text: "Playbook has been initiated"
+        text: |
+          Playbook has been initiated.
+          [View Process](http://concord-ubuntu:8001//#/process/${txId}/status)
         ignoreErrors: true
       out: result
     - if: "${!result.ok}"
