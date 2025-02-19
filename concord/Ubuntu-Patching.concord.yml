@@ -17,7 +17,7 @@ flows:
             user: concord-server
             secret:
               org: "Samuel_Org"
-              name: Azure
+              name: Samuel_GitHub_Key
         playbook: playbook/Ubuntu_Patching.yml
         inventoryFile: inventory.ini
         extraVars:
