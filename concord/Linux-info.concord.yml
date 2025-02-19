@@ -25,6 +25,12 @@ flows:
       out: playbookResult
     - if: "${playbookResult.ok}"
       then:
-        - call: teamSuccess
+        - call: teams
+          in:
+            msgData:
+              text: "Playbook finished with error"
       else:
-        - call: teamFailure
+        - call: teams
+          in:
+            msgData:
+              text: "Playbook has been successfully completed"
