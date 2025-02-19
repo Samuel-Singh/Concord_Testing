@@ -7,7 +7,7 @@ flows:
         title: "A Concord process has been started"
         text: |
           Playbook has been initiated.
-          [View Concord Process](https://concord.prod.walmart.com/#/process/${txId})
+          [View Concord Process](https://http://concord:8001/#/process/${txId})
         ignoreErrors: true
       out: result
     - if: "${!result.ok}"
