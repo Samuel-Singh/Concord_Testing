@@ -19,8 +19,6 @@ publicFlows:
 
 flows:
   Get Linux Information:
-   - task: processInfo
-     out: processInfo
    - log: "Process Instance ID: ${processInfo.instanceId}"
    - call: LinuxInfo
   Ubuntu Patching:
