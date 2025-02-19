@@ -1,0 +1,25 @@
+flows:
+  LinuxInfo:
+    - checkpoint: "Start"
+    - checkpoint: "User Input"
+    - form: linux_server
+    - checkpoint: "Run Playbook"
+    - call: teams
+    - task: ansible
+      in:
+        config:
+          defaults:
+            forks: 50
+          ssh_connection:
+            pipelining: True
+        auth:
+          privateKey:
+            user: concord-server
+            secret:
+              org: "Samuel_Org"
+              name: Azure
+        playbook: playbook/Ubuntu_Patching.yml
+        inventoryFile: inventory.ini
+        extraVars:
+          target_hosts: ${linux_server.target}
+      out: playbookResult
