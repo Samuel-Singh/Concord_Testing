@@ -1,6 +1,6 @@
 flows:
   teams:
-    - call: common.setConcordProcess
+    - call: ../common.setConcordProcess
     - task: msteams
       in:
         action: sendMessage
