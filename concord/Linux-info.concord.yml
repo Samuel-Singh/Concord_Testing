@@ -16,7 +16,7 @@ flows:
           privateKey:
             user: concord-server
             secret:
-              org: "Samuel_Testing"
+              org: "Samuel_Org"
               name: Azure
         playbook: playbook/Linux_Info.yml
         inventoryFile: inventory.ini
