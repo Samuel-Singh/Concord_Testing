@@ -7,7 +7,7 @@ flows:
         title: "A Concord process has been started"
         text: |
           Playbook has been initiated.
-          [View Process](http://concord-ubuntu:8001/#/process/${txId}/status)
+          [Concord Link](${concordProcess})
         ignoreErrors: true
       out: result
     - if: "${!result.ok}"
